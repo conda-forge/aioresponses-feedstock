@@ -1,5 +1,5 @@
 {% set name = "aioresponses" %}
-{% set version = "0.7.8" %}
+{% set version = "0.7.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/aioresponses-{{ version }}.tar.gz
-  sha256: b861cdfe5dc58f3b8afac7b0a6973d5d7b2cb608dd0f6253d16b8ee8eaf6df11
+  sha256: 1dcfa28938fc006f046a98383a7c07ac180be7a492c1ed557f5cd7b0805357d3 
 
 build:
   noarch: python
@@ -17,12 +17,12 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - pbr
     - pip
+    - setuptools
   run:
     - python >={{ python_min }}
-    - aiohttp >=3.3.0,<4
-    - packaging
+    - aiohttp >=3.8.0,<4
+    - packaging >=22.0
 
 test:
   imports:
